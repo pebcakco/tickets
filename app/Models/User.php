@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Tickets;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -36,4 +36,24 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * This user can own many tickets
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tickets()
+    {
+        return $this->hasMany('Tickets\Ticket', 'user_id');
+    }
+
+    /**
+     * This user belongs to a department
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function department()
+    {
+        return $this->belongsTo('Tickets\Department', 'department_id');
+    }
 }
