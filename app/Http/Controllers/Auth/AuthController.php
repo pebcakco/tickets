@@ -2,11 +2,11 @@
 
 namespace Tickets\Http\Controllers\Auth;
 
-use Tickets\User;
-use Validator;
 use Tickets\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Tickets\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -22,6 +22,9 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    protected $redirectPath = '/';
+    protected $loginPath = 'login';
 
     /**
      * Create a new authentication controller instance.

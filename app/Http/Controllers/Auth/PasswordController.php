@@ -20,6 +20,9 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    protected $redirectPath = '/';
+    protected $subject = "[Pebcak] Please reset your password";
+
     /**
      * Create a new password controller instance.
      *

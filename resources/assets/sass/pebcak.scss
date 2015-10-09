@@ -1,1 +1,19 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+  padding-top: 50px;
+}
+
+html, body, #content{
+  height: 100%;
+}
+
+#centered-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#centered-div {
+  margin-top: 7.5%;
+}
